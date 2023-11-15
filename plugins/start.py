@@ -17,12 +17,12 @@ import os
 
 CHANNEL = os.environ.get('CHANNEL', "")
 STRING = os.environ.get("STRING", "")
-ADMIN = int(os.environ.get("ADMIN", 1484670284))
-bot_username = os.environ.get("BOT_USERNAME","GangsterBaby_renamer_BOT")
+ADMIN = int(os.environ.get("ADMIN", ""))
+bot_username = os.environ.get("BOT_USERNAME","eliterenamebot")
 log_channel = int(os.environ.get("LOG_CHANNEL", ""))
 token = os.environ.get('TOKEN', '')
 botid = token.split(':')[0]
-FLOOD = 500
+FLOOD = 300
 LAZY_PIC = os.environ.get("LAZY_PIC", "")
 
 
@@ -46,15 +46,15 @@ async def start(client, message):
         id = message.text.split(' ')[1]
     except:
         txt=f"""Hello {wish} {message.from_user.first_name } \n\n
-	I am file renamer bot, Please sent any telegram**Document Or Video** and enter new filename to rename it"""
+	➻ ᴛʜɪꜱ ɪꜱ ᴀɴ ᴀᴅᴠᴀɴᴄᴇᴅ ᴀɴᴅ ʏᴇᴛ ᴘᴏᴡᴇʀꜰᴜʟ ʀᴇɴᴀᴍᴇ ʙᴏᴛ.\n\n➻ ᴜꜱɪɴɢ ᴛʜɪꜱ ʙᴏᴛ ʏᴏᴜ ᴄᴀɴ ʀᴇɴᴀᴍᴇ ᴀɴᴅ ᴄʜᴀɴɢᴇ ᴛʜᴜᴍʙɴᴀɪʟ ᴏꜰ ʏᴏᴜʀ ꜰɪʟᴇꜱ\n\n➻ ʏᴏᴜ ᴄᴀɴ ᴀʟꜱᴏ ᴄᴏɴᴠᴇʀᴛ ᴠɪᴅᴇᴏ ᴛᴏ ꜰɪʟᴇ ᴀɴᴅ ꜰɪʟᴇ ᴛᴏ ᴠɪᴅᴇᴏ.\n\n➻ ᴛʜɪꜱ ʙᴏᴛ ᴀʟꜱᴏ ꜱᴜᴘᴘᴏʀᴛꜱ ᴄᴜꜱᴛᴏᴍ ᴛʜᴜᴍʙɴᴀɪʟ ᴀɴᴅ ᴄᴜꜱᴛᴏᴍ ᴄᴀᴘᴛɪᴏɴ."""
         await message.reply_photo(photo=LAZY_PIC,
                                 caption=txt,
                                 reply_markup=InlineKeyboardMarkup(
-                                      [[InlineKeyboardButton("🔺 Update Channel 🔺", url="https://t.me/pathan_botz")],
-                                      [InlineKeyboardButton("🦋 Subscribe us 🦋", url="https://youtube.com/@PG.Anme786?si=j9ck5bBSyf0hx0si")],
-                                      [InlineKeyboardButton("Support Group", url='https://t.me/back_up_pathan'),
-                                      InlineKeyboardButton("🎥 Movie Group 🎥", url='https://t.me/Pathans_movies')],
-                                      [InlineKeyboardButton("⚡ Owner ⚡", url='https://t.me/Flipkartlootzs')]
+                                      [[InlineKeyboardButton("Update Channel", url="https://t.me/elitecraft_studios")],
+                                      [InlineKeyboardButton("Support Group", url='https://t.me/elitecraft_support'),
+                                      InlineKeyboardButton("🎥 Movie Group 🎥", url='https://t.me/movie_request_zone5')],
+                                      [InlineKeyboardButton("Help", callback_data="help"),
+				      InlineKeyboardButton("About", callback_data="about")]
                                       ]))
         return
     if id:
@@ -64,11 +64,11 @@ async def start(client, message):
                 await message.reply_photo(photo=LAZY_PIC,
                                          caption=txt,
                                          reply_markup=InlineKeyboardMarkup(
-                                             [[InlineKeyboardButton("🔺 Update Channel 🔺", url="https://t.me/pathan_botz")],
-                                              [InlineKeyboardButton("🦋 Subscribe us 🦋", url="https://youtube.com/@PG.Anme786?si=j9ck5bBSyf0hx0si")],
-                                              [InlineKeyboardButton("Support Group", url='https://t.me/back_up_pathan'),
-                                             InlineKeyboardButton("🎥 Movie Group 🎥", url='https://t.me/Pathans_movies')],
-                                             [InlineKeyboardButton("⚡ Owner ⚡", url='https://t.me/Flipkartlootzs')]
+                                             [[InlineKeyboardButton("Update Channel", url="https://t.me/elitecraft_studios")],
+                                              [InlineKeyboardButton("Support Group", url='https://t.me/elitecraft_support'),
+                                             InlineKeyboardButton("Movie Group", url='https://t.me/movie_request_zone5')],
+                                             [InlineKeyboardButton("help", callback_data="help"),
+					     InlineKeyboardButton("About", callback_data="about")]
                                           ]))
             except:
                 return
@@ -84,11 +84,10 @@ async def start(client, message):
 	**Document Or Video** and enter new filename to rename it__
 	""", reply_to_message_id=message.id,
                                      reply_markup=InlineKeyboardMarkup(
-                                         [[InlineKeyboardButton("🔺 Update Channel 🔺", url="https://t.me/pathan_botz")],
-                                          [InlineKeyboardButton("🦋 Subscribe us 🦋", url="https://youtube.com/@PG.Anme786?si=j9ck5bBSyf0hx0si")],
-                                          [InlineKeyboardButton("Support Group", url='https://t.me/back_up_pathan'),
-                                          InlineKeyboardButton("🎥 Movie Group 🎥", url='https://t.me/real_MoviesAdda2')],
-                                          [InlineKeyboardButton("⚡ Owner ⚡", url='https://t.me/Flipkartlootzs')]
+                                         [[InlineKeyboardButton("Update Channel", url="https://t.me/elitecraft_studios")],
+                                          [InlineKeyboardButton("Support Group", url='https://t.me/elitecraft_support'),
+                                          InlineKeyboardButton("Movie Group", url='https://t.me/movie_request_zone5')],
+                                          [InlineKeyboardButton("help", callback_data="help")]
                                           ]))
     
 
@@ -126,10 +125,10 @@ async def send_doc(client, message):
     except:
         await message.reply_text(text=f"Hello dear {message.from_user.first_name}  **we are currently working on this issue**\n\nPlease try to rename files from your another account.\nBecause this BOT can't rename file sent by some ids.\n\nIf you are an **ADMIN** Don't worry ! here we have a solution for you dear {message.from_user.first_name }.\n\nPlease use \n👉 `/addpremium your_other_userid` 👈 to use premium feautres\n\n",
                                   reply_markup=InlineKeyboardMarkup([
-                                                                     [InlineKeyboardButton("🦋 Contact Pathanbotz 🦋", url='https://t.me/pathan_botz')],
-                                                                     [InlineKeyboardButton("🔺 Subscriber Us🔺", url='https://youtube.com/@PG.Anme786?si=j9ck5bBSyf0hx0si')],
-                                                                     [InlineKeyboardButton("🦋 Visit Channel  ", url='https://t.me/pathan_botz')],
-                                                                     [InlineKeyboardButton("  Support Group 🦋", url='https://t.me/LazyPrincessSupport')]
+                                                                     [InlineKeyboardButton("🦋 Update Channel 🦋", url='https://t.me/elitecraft_studios')],
+                                                                     [InlineKeyboardButton("🔺 Subscriber Us🔺", url='https://youtube.com/@elitecraft_studios')],
+                                                                     [InlineKeyboardButton("Movie Group", url='https://t.me/movie_request_zone5')],
+                                                                     [InlineKeyboardButton("  Support Group 🦋", url='https://t.me/elitectaft_support')]
                                                                     ]))
         await message.reply_text(text=f"🦋")
         return 
