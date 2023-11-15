@@ -28,6 +28,34 @@ ADMIN = os.environ.get("ADMIN", "1720319665")
 
 app = Client("test", api_id=API_ID, api_hash=API_HASH, session_string=STRING)
 
+elif query.data == "about":
+        buttons = [[
+            InlineKeyboardButton('🧑‍💻 Oᴡɴᴇʀ Iɴғᴏ', callback_data='owner_info'),
+            InlineKeyboardButton('📑 Sᴏᴜʀᴄᴇ Cᴏᴅᴇ', callback_data='source')
+        ],[
+            InlineKeyboardButton('Cʟᴏsᴇ', callback_data='close_data')
+        ]]
+        await client.edit_message_media(
+            query.message.chat.id, 
+            query.message.id, 
+            InputMediaPhoto("https://graph.org/file/1c15be412eb886ba1c8e3.jpg")
+        )
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await query.message.edit_text(
+            text="● ◌ ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ◌"
+        )
+        await query.message.edit_text(
+            text="● ● ●"
+        )
+        await query.message.edit_text(
+            text="╭───────────⍟\n├🤖 ᴍy ɴᴀᴍᴇ : File Renamer Bot\n├🤍 Dᴇᴠᴇʟᴏᴩᴇʀꜱ : IT'S LUFFY\n├👨‍💻 Pʀᴏɢʀᴀᴍᴇʀ : IT'S LUFFY\n├📕 Lɪʙʀᴀʀy : Pyʀᴏɢʀᴀᴍ\n├✏️ Lᴀɴɢᴜᴀɢᴇ: Pyᴛʜᴏɴ 3\n├💾 Dᴀᴛᴀ Bᴀꜱᴇ: Mᴏɴɢᴏ DB\n├📊 Bᴜɪʟᴅ Vᴇʀꜱɪᴏɴ: Rᴇɴᴀᴍᴇʀ V3.0.0\n╰───────────────⍟",
+            reply_markup=reply_markup,
+            parse_mode=enums.ParseMode.HTML
+        )
+
 
 @Client.on_callback_query(filters.regex('cancel'))
 async def cancel(bot, update):
@@ -45,7 +73,7 @@ async def rename(bot, update):
     chat_id = update.message.chat.id
     id = update.message.reply_to_message_id
     await update.message.delete()
-    await update.message.reply_text(f"__Please enter the new filename...__\n\nNote:- Extension Not Required", reply_to_message_id=id,
+    await update.message.reply_text(f"»»——— 𝙋𝙡𝙚𝙖𝙨𝙚 𝙚𝙣𝙩𝙚𝙧 𝙣𝙚𝙬 𝙛𝙞𝙡𝙚 𝙣𝙖𝙢𝙚...", reply_to_message_id=id,
                                     reply_markup=ForceReply(True))
     dateupdate(chat_id, date)
 
@@ -67,7 +95,7 @@ async def doc(bot, update):
     total_used = used + int(file.file_size)
     used_limit(update.from_user.id, total_used)
     try:
-        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`Trying To Download...`",  ms, c_time))
+        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`༻☬ད𝘽𝙪𝙡𝙞𝙙𝙞𝙣𝙜 𝙈𝙚𝙩𝙖𝙙𝙖𝙩𝙖...`",  ms, c_time))
 
     except Exception as e:
         neg_used = used - int(file.file_size)
@@ -159,7 +187,7 @@ async def vid(bot, update):
     total_used = used + int(file.file_size)
     used_limit(update.from_user.id, total_used)
     try:
-        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`Trying To Download...`",  ms, c_time))
+        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`༻☬ད𝘽𝙪𝙡𝙞𝙙𝙞𝙣𝙜 𝙈𝙚𝙩𝙖𝙙𝙖𝙩𝙖...`",  ms, c_time))
 
     except Exception as e:
         neg_used = used - int(file.file_size)
@@ -259,7 +287,7 @@ async def aud(bot, update):
     ms = await update.message.edit("`Trying To Download...`")
     c_time = time.time()
     try:
-        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`Trying To Download...`",  ms, c_time))
+        path = await bot.download_media(message=file, progress=progress_for_pyrogram, progress_args=("`༻☬ད𝘽𝙪𝙡𝙞𝙙𝙞𝙣𝙜 𝙈𝙚𝙩𝙖𝙙𝙖𝙩𝙖...`",  ms, c_time))
     except Exception as e:
         neg_used = used - int(file.file_size)
         used_limit(update.from_user.id, neg_used)
