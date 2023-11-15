@@ -18,12 +18,12 @@ async def upgrade(bot,update):
 	Price Rs 20  ind /🌎 1$  per Month
 	
 	
-	Pay Using Upi I'd `9601080496@fam`
+	Contact me `@god_luffy_ati`
 	
 	After Payment Send Screenshots Of 
-        Payment To Admin @Flipkartlootzs"""
+        Payment To Admin @god_luffy_ati"""
 	keybord = InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/Flipkartlootzs")], 
+        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/god_luffy_ati")], 
         			[InlineKeyboardButton("Cancel",callback_data = "cancel")  ]])
 	await update.message.edit(text = text,reply_markup = keybord)
 	
@@ -44,11 +44,11 @@ async def upgradecm(bot,message):
 	Price Rs 20  ind /🌎 1$  per Month
 	
 	
-	Pay Using Upi I'd `9601080496@fam`
+	Contact Me `@god_luffy_ati`
 	
 	After Payment Send Screenshots Of 
-        Payment To Admin @Flipkartlootzs""" 
+        Payment To Admin @god_luffy_ati""" 
 	keybord = InlineKeyboardMarkup([[ 
-        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/Flipkartlootzs")], 
+        			InlineKeyboardButton("ADMIN 🛂",url = "https://t.me/god_luffy_ati")], 
         			[InlineKeyboardButton("Cancel",callback_data = "cancel")  ]])
 	await message.reply_text(text = text,reply_markup = keybord)
